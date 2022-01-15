@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		049EAB842792C96A00889877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EAB832792C96A00889877 /* AppDelegate.swift */; };
 		049EAB862792C96A00889877 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EAB852792C96A00889877 /* SceneDelegate.swift */; };
-		049EAB882792C96A00889877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EAB872792C96A00889877 /* ViewController.swift */; };
 		049EAB8B2792C96A00889877 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049EAB892792C96A00889877 /* Main.storyboard */; };
 		049EAB8D2792C96A00889877 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049EAB8C2792C96A00889877 /* Assets.xcassets */; };
 		049EAB902792C96A00889877 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049EAB8E2792C96A00889877 /* LaunchScreen.storyboard */; };
+		049EAB9B2792CA3C00889877 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EAB9A2792CA3C00889877 /* StartScreen.swift */; };
+		049EABA32792E0EE00889877 /* AnimationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EABA22792E0EE00889877 /* AnimationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		049EAB802792C96A00889877 /* InterviewDankolab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewDankolab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049EAB832792C96A00889877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		049EAB852792C96A00889877 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		049EAB872792C96A00889877 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		049EAB8A2792C96A00889877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		049EAB8C2792C96A00889877 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049EAB8F2792C96A00889877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049EAB912792C96A00889877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049EAB9A2792CA3C00889877 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		049EABA22792E0EE00889877 /* AnimationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				049EAB832792C96A00889877 /* AppDelegate.swift */,
 				049EAB852792C96A00889877 /* SceneDelegate.swift */,
-				049EAB872792C96A00889877 /* ViewController.swift */,
+				049EAB9A2792CA3C00889877 /* StartScreen.swift */,
+				049EABA22792E0EE00889877 /* AnimationManager.swift */,
 				049EAB892792C96A00889877 /* Main.storyboard */,
 				049EAB8C2792C96A00889877 /* Assets.xcassets */,
 				049EAB8E2792C96A00889877 /* LaunchScreen.storyboard */,
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049EAB882792C96A00889877 /* ViewController.swift in Sources */,
+				049EABA32792E0EE00889877 /* AnimationManager.swift in Sources */,
 				049EAB842792C96A00889877 /* AppDelegate.swift in Sources */,
 				049EAB862792C96A00889877 /* SceneDelegate.swift in Sources */,
+				049EAB9B2792CA3C00889877 /* StartScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

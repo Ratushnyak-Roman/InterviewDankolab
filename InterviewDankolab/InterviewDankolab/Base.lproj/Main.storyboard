@@ -1,24 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartScreen" customModule="InterviewDankolab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="free-icon-legend-2178114" translatesAutoresizingMaskIntoConstraints="NO" id="Bdq-jG-ap3">
+                                <rect key="frame" x="50" y="296" width="314" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Bdq-jG-ap3" secondAttribute="height" multiplier="1:1" id="o2D-nO-HcL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loader" translatesAutoresizingMaskIntoConstraints="NO" id="oeY-Uk-ikb">
+                                <rect key="frame" x="105" y="351" width="204" height="204"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOf-8K-IqF">
+                                <rect key="frame" x="50" y="802" width="314" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="NhH-ZP-wfe"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="𝙱𝚘𝚘𝚔𝚜 𝚔𝚎𝚎𝚙𝚎" translatesAutoresizingMaskIntoConstraints="NO" id="Lqw-qz-9ie">
+                                <rect key="frame" x="50" y="206" width="314" height="80"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Lqw-qz-9ie" firstAttribute="width" secondItem="Bdq-jG-ap3" secondAttribute="width" id="284-D2-dNz"/>
+                            <constraint firstItem="oeY-Uk-ikb" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bso-ZE-aCL"/>
+                            <constraint firstItem="Bdq-jG-ap3" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.35" id="GoW-Yb-6o0"/>
+                            <constraint firstItem="Bdq-jG-ap3" firstAttribute="top" secondItem="Lqw-qz-9ie" secondAttribute="bottom" constant="10" id="QHv-D4-6Lf"/>
+                            <constraint firstItem="aOf-8K-IqF" firstAttribute="width" secondItem="Bdq-jG-ap3" secondAttribute="width" id="TAC-km-Ncw"/>
+                            <constraint firstItem="Bdq-jG-ap3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="boh-8v-0e3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aOf-8K-IqF" secondAttribute="bottom" constant="20" id="cfR-2L-3wq"/>
+                            <constraint firstItem="aOf-8K-IqF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="dDD-9L-0h1"/>
+                            <constraint firstItem="oeY-Uk-ikb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="hc4-di-eOF"/>
+                            <constraint firstItem="Lqw-qz-9ie" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="mgg-SF-29W"/>
+                            <constraint firstItem="Bdq-jG-ap3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wja-ly-TJ2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="StartBtn" destination="aOf-8K-IqF" id="q4t-UA-9Bq"/>
+                        <outlet property="appLogo" destination="Bdq-jG-ap3" id="fEr-Ti-gtV"/>
+                        <outlet property="appName" destination="Lqw-qz-9ie" id="dBM-L9-NeT"/>
+                        <outlet property="loader" destination="oeY-Uk-ikb" id="sQc-0d-dNx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-214.49275362318843" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Loader" width="204" height="204"/>
+        <image name="free-icon-legend-2178114" width="544" height="450"/>
+        <image name="𝙱𝚘𝚘𝚔𝚜 𝚔𝚎𝚎𝚙𝚎" width="536" height="80"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
