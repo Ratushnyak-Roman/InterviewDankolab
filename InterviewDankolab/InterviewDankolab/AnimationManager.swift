@@ -14,7 +14,21 @@ class AnimationManager {
     var animationTime = DispatchTimeInterval.seconds(Int.random(in: 2...5))
     var loadIsComplete = false
     
+    var sessionNumber: Int {
+        get{
+            return UserDefaults.standard.integer(forKey: "session_number")
+        }
+        set{
+            UserDefaults.standard.setValue(newValue, forKey: "session_number")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     private init() {}
+    
+    func sessionCounter() {
+        sessionNumber += 1
+    }
     
     func animate(obj: UIImageView) {
         let animation = CABasicAnimation()
