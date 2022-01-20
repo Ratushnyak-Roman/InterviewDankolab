@@ -24,5 +24,10 @@ class BookTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setup(book: Book) {
+        self.bookName.text = book.bookName
+        self.bookDate.text = book.bookDate
+    }
 
 }

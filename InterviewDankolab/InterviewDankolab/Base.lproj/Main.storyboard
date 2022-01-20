@@ -120,6 +120,7 @@
                                 <connections>
                                     <outlet property="bookDate" destination="3WW-lc-ggg" id="UJ9-9V-dPk"/>
                                     <outlet property="bookName" destination="EU8-sD-i9n" id="oLA-48-Fz1"/>
+                                    <segue destination="wgv-Vk-1y4" kind="show" identifier="editBook" id="DBP-3t-T2P"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -130,11 +131,74 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="YB6-RT-e7I">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="Shape" id="Dn3-Oy-e8l"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dNJ-Ra-dTB">
+                            <connections>
+                                <segue destination="wgv-Vk-1y4" kind="show" id="OLO-MC-gDD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvG-t8-OGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582.608695652174" y="93.75"/>
+        </scene>
+        <!--Book Management View Controller-->
+        <scene sceneID="Dup-B2-6Dj">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="wgv-Vk-1y4" customClass="BookManagementViewController" customModule="InterviewDankolab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zdp-pT-cGO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnW-gO-5tz">
+                                <rect key="frame" x="20" y="76" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged:" destination="wgv-Vk-1y4" eventType="editingChanged" id="PXt-Fj-jBf"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNz-sl-fjJ">
+                                <rect key="frame" x="38.5" y="728" width="337" height="40"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="FyZ-zU-do4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="bMl-fZ-LA4" kind="unwind" identifier="saveSegue" unwindAction="unwindSegueWithSegue:" id="GfM-y6-imU"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="AWt-cj-oNr">
+                                <rect key="frame" x="20" y="130" width="374" height="216"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LfA-hD-ByD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LfA-hD-ByD" firstAttribute="trailing" secondItem="MnW-gO-5tz" secondAttribute="trailing" constant="20" id="4ZT-Lm-snF"/>
+                            <constraint firstItem="MnW-gO-5tz" firstAttribute="top" secondItem="LfA-hD-ByD" secondAttribute="top" constant="20" id="GBQ-p7-7zl"/>
+                            <constraint firstItem="LfA-hD-ByD" firstAttribute="bottom" secondItem="TNz-sl-fjJ" secondAttribute="bottom" constant="40" id="TeD-Ct-Nik"/>
+                            <constraint firstItem="AWt-cj-oNr" firstAttribute="top" secondItem="MnW-gO-5tz" secondAttribute="bottom" constant="20" id="Uzh-rn-aob"/>
+                            <constraint firstItem="MnW-gO-5tz" firstAttribute="leading" secondItem="LfA-hD-ByD" secondAttribute="leading" constant="20" id="dPa-JF-Kgr"/>
+                            <constraint firstItem="LfA-hD-ByD" firstAttribute="trailing" secondItem="AWt-cj-oNr" secondAttribute="trailing" constant="20" id="omQ-yG-0ga"/>
+                            <constraint firstItem="TNz-sl-fjJ" firstAttribute="centerX" secondItem="LfA-hD-ByD" secondAttribute="centerX" id="rUU-IB-Ss1"/>
+                            <constraint firstItem="AWt-cj-oNr" firstAttribute="leading" secondItem="LfA-hD-ByD" secondAttribute="leading" constant="20" id="sdc-EQ-TvT"/>
+                            <constraint firstItem="TNz-sl-fjJ" firstAttribute="width" secondItem="AWt-cj-oNr" secondAttribute="width" multiplier="0.9" id="w4Q-Qh-iei"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6Hd-zo-Ral"/>
+                    <connections>
+                        <outlet property="bookNameTF" destination="MnW-gO-5tz" id="BB0-av-ECb"/>
+                        <outlet property="datePicker" destination="AWt-cj-oNr" id="Hf0-di-aNr"/>
+                        <outlet property="doneButton" destination="TNz-sl-fjJ" id="DlV-lC-W3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gxF-sM-Sun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="bMl-fZ-LA4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2437.68115942029" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MKk-yx-uJK">
@@ -158,6 +222,9 @@
             <point key="canvasLocation" x="673.91304347826087" y="93.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="OLO-MC-gDD"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Loader" width="204" height="204"/>
         <image name="Shape" width="20" height="20"/>
