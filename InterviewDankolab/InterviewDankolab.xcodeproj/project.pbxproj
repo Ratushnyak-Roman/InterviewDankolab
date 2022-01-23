@@ -18,6 +18,7 @@
 		049EABAF2796D82400889877 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EABAE2796D82400889877 /* BookTableViewCell.swift */; };
 		049EABB62796DB7100889877 /* BookModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EABB52796DB7100889877 /* BookModel.swift */; };
 		049EABB92796E70500889877 /* BookManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EABB82796E70500889877 /* BookManagementViewController.swift */; };
+		049EABBD2799768E00889877 /* SortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EABBC2799768E00889877 /* SortViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		049EABAE2796D82400889877 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		049EABB52796DB7100889877 /* BookModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookModel.swift; sourceTree = "<group>"; };
 		049EABB82796E70500889877 /* BookManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookManagementViewController.swift; sourceTree = "<group>"; };
+		049EABBC2799768E00889877 /* SortViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				049EABA22792E0EE00889877 /* AnimationManager.swift */,
 				049EABAE2796D82400889877 /* BookTableViewCell.swift */,
 				049EABB82796E70500889877 /* BookManagementViewController.swift */,
+				049EABBC2799768E00889877 /* SortViewController.swift */,
 				049EAB892792C96A00889877 /* Main.storyboard */,
 				049EABB52796DB7100889877 /* BookModel.swift */,
 				049EAB8C2792C96A00889877 /* Assets.xcassets */,
@@ -154,6 +157,7 @@
 			files = (
 				049EABA32792E0EE00889877 /* AnimationManager.swift in Sources */,
 				049EAB842792C96A00889877 /* AppDelegate.swift in Sources */,
+				049EABBD2799768E00889877 /* SortViewController.swift in Sources */,
 				049EAB862792C96A00889877 /* SceneDelegate.swift in Sources */,
 				049EABA627940C1200889877 /* TableViewController.swift in Sources */,
 				049EABB92796E70500889877 /* BookManagementViewController.swift in Sources */,

@@ -6,28 +6,27 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
-//    var books: [Book] {
-//        get{
-//            return UserDefaults.standard.array(forKey: "book_array") as? [Book] ?? [Book]()
-//        }
-//        set{
-//            UserDefaults.standard.setValue(newValue, forKey: "book_array")
-//            UserDefaults.standard.synchronize()
-//        }
-//    }
-    
     var books = [
-        Book(bookName: "New book", bookDate: "21.01.22"),
-        Book(bookName: "Test book", bookDate: "20.01.22")
+        Book(bookName: "New book", bookDate: "25.01.22"),
+        Book(bookName: "Test book", bookDate: "24.01.22"),
+        Book(bookName: "best book", bookDate: "23.01.22")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
     }
+    
+    
+    @IBAction func openSortOptions(_ sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(identifier: "SortVC")
+        self.present(vc!, animated: true, completion: nil)
+    }
+    
     
     @IBAction func unwindSegue (segue: UIStoryboardSegue) {
         guard segue.identifier == "saveSegue" else { return }
@@ -44,6 +43,17 @@ class TableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .fade)
         }
         
+    }
+    
+    @IBAction func unwindSegueFromSort (segue: UIStoryboardSegue) {
+        switch segue.identifier {
+        case "sortByNameSegue":
+            sortByName()
+        case "sortByDateSegue":
+            sortByDate()
+        default:
+            break
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -66,6 +76,26 @@ class TableViewController: UITableViewController {
         self.tableView.setEmptyMessage("Empty list")
         
     }
+    
+    func sortByName() {
+        let newArray = books.sorted { (book1, book2) -> Bool in
+            return book1.bookName.lowercased().compare(book2.bookName.lowercased()) == ComparisonResult.orderedAscending
+        }
+        books = newArray
+        tableView.reloadData()
+    }
+    
+    func sortByDate() {
+        let newArray = books.sorted { (book1, book2) -> Bool in
+            return book1.bookDate.compare(book2.bookDate) == ComparisonResult.orderedAscending
+//            book1.bookDate < book2.bookDate
+        }
+        books = newArray
+        tableView.reloadData()
+        
+    }
+    
+    
 
     // MARK: - Table view data source
 

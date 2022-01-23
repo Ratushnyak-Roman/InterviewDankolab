@@ -130,7 +130,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="YB6-RT-e7I">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Shape" id="Dn3-Oy-e8l"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Shape" id="Dn3-Oy-e8l">
+                            <connections>
+                                <action selector="openSortOptions:" destination="PPH-n7-Dxo" id="11V-Z1-T5L"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dNJ-Ra-dTB">
                             <connections>
                                 <segue destination="wgv-Vk-1y4" kind="show" id="OLO-MC-gDD"/>
@@ -141,6 +145,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wvG-t8-OGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1582.608695652174" y="93.75"/>
+        </scene>
+        <!--Sort View Controller-->
+        <scene sceneID="NuV-wP-Pjf">
+            <objects>
+                <viewController storyboardIdentifier="SortVC" modalPresentationStyle="overCurrentContext" id="Yod-d2-2pP" customClass="SortViewController" customModule="InterviewDankolab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="61b-Yd-lMR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZw-d6-qBb">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6wY-dO-8uv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelAction:" destination="Yod-d2-2pP" eventType="touchUpInside" id="O8U-AS-U7P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-J2-yrs">
+                                <rect key="frame" x="20" y="682" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="AfC-2U-PZ2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Sort by name"/>
+                                <connections>
+                                    <segue destination="Fb0-As-6dp" kind="unwind" identifier="sortByNameSegue" unwindAction="unwindSegueFromSortWithSegue:" id="yhr-7f-u4z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gR-dx-cBe">
+                                <rect key="frame" x="20" y="732" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="OnE-jy-J5T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Sort by date"/>
+                                <connections>
+                                    <segue destination="Fb0-As-6dp" kind="unwind" identifier="sortByDateSegue" unwindAction="unwindSegueFromSortWithSegue:" id="eMP-6G-xax"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Wpu-9y-wZ5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.3035101858126063" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kZw-d6-qBb" firstAttribute="leading" secondItem="Wpu-9y-wZ5" secondAttribute="leading" constant="20" id="LEd-Xu-TJm"/>
+                            <constraint firstItem="3gR-dx-cBe" firstAttribute="centerX" secondItem="Wpu-9y-wZ5" secondAttribute="centerX" id="Ox7-7U-Dcv"/>
+                            <constraint firstItem="kZw-d6-qBb" firstAttribute="top" secondItem="3gR-dx-cBe" secondAttribute="bottom" constant="10" id="Rys-wb-JSE"/>
+                            <constraint firstItem="3gR-dx-cBe" firstAttribute="top" secondItem="oQc-J2-yrs" secondAttribute="bottom" id="SiZ-4b-kix"/>
+                            <constraint firstItem="Wpu-9y-wZ5" firstAttribute="bottom" secondItem="kZw-d6-qBb" secondAttribute="bottom" constant="20" id="XB3-sq-ozk"/>
+                            <constraint firstItem="3gR-dx-cBe" firstAttribute="width" secondItem="kZw-d6-qBb" secondAttribute="width" id="aF3-Y9-9YD"/>
+                            <constraint firstItem="Wpu-9y-wZ5" firstAttribute="trailing" secondItem="kZw-d6-qBb" secondAttribute="trailing" constant="20" id="dUD-g6-0ud"/>
+                            <constraint firstItem="oQc-J2-yrs" firstAttribute="width" secondItem="3gR-dx-cBe" secondAttribute="width" id="u1M-4X-nAP"/>
+                            <constraint firstItem="oQc-J2-yrs" firstAttribute="centerX" secondItem="Wpu-9y-wZ5" secondAttribute="centerX" id="ubr-lg-S0a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kGw-vU-3Ih"/>
+                    <connections>
+                        <outlet property="cancelBtn" destination="kZw-d6-qBb" id="KFa-Ed-oNA"/>
+                        <outlet property="sortDateBtn" destination="3gR-dx-cBe" id="Hjq-I2-5To"/>
+                        <outlet property="sortNameBtn" destination="oQc-J2-yrs" id="RJx-hq-M18"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w53-dl-pwQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Fb0-As-6dp" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1582.608695652174" y="784.82142857142856"/>
         </scene>
         <!--Book Management View Controller-->
         <scene sceneID="Dup-B2-6Dj">
@@ -223,7 +298,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OLO-MC-gDD"/>
+        <segue reference="DBP-3t-T2P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Loader" width="204" height="204"/>
